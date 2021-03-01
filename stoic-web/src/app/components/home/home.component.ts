@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
 
     this.userService.getUser(token).subscribe(res => {
       this.userInfo = res.data;
-      console.log('a');
     });
   }
 
