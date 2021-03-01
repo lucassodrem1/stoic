@@ -1,0 +1,43 @@
+<!--Navbar-->
+<mdb-navbar
+  SideClass="navbar navbar-expand-lg navbar-dark elegant-color-dark"
+  [containerInside]="false"
+>
+  <div class="container">
+    <!-- Navbar brand -->
+    <mdb-navbar-brand
+      ><a class="navbar-brand" href="#">stOIc</a></mdb-navbar-brand
+    >
+
+    <!-- Collapsible content -->
+    <links>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link"> Olá, {{ username }}! </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <mdb-icon fab icon="twitter"></mdb-icon>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <mdb-icon fab icon="google-plus"></mdb-icon>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <mdb-icon
+              fas
+              icon="home"
+              [routerLink]="['/home']"
+              title="Página Inicial"
+            ></mdb-icon>
+          </a>
+        </li>
+      </ul>
+    </links>
+  </div>
+  <!-- Collapsible content -->
+</mdb-navbar>
+<!--/.Navbar-->

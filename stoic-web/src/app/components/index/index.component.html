@@ -1,0 +1,324 @@
+<header class="header-class">
+  <nav class="navbar navbar-expand-lg navbar-light poppins-font fixed-top">
+    <a class="navbar-brand" href="#">stOIc</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link nav-item-text" href="#about">Sobre</a>
+        <a class="nav-item nav-link nav-item-text" href="#">Características</a>
+        <a class="nav-item nav-link nav-item-text" href="#">Detalhes</a>
+        <button
+          class="nav-item nav-link nav-btn"
+          href="#"
+          (click)="login.show()"
+        >
+          Entrar
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row mt-very-high">
+      <div class="col-md-6 d-flex justify-content-center">
+        <div class="header-title poppins-font">
+          <h1>
+            Transforme seu <span class="highlight">medo</span> em
+            <span class="highlight">energia</span>
+          </h1>
+          <h4 class="mt-4">Permita-se crescer, imaginar e construir.</h4>
+          <a href="#about">
+            <button class="header-btn mt-5 wow fadeIn" data-wow-delay="0.4s">
+              Veja mais <mdb-icon fas icon="angle-down"></mdb-icon>
+              <hr class="header-btn-hr wow zoomIn" data-wow-delay="1.5s" />
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 d-flex justify-content-center">
+        <img
+          class="header-img img-fluid mx-auto"
+          src="assets/index/header-img.png"
+        />
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="mb-5">
+  <div class="container">
+    <section id="about" class="wow fadeIn">
+      <h2 class="section-title poppins-font">Sobre</h2>
+      <hr class="section-hr wow zoomIn" />
+
+      <div class="row mt-5">
+        <div class="col-6">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+          </p>
+        </div>
+
+        <div class="col-6">
+          <img
+            class="img-fluid"
+            src="https://www.unyp.cz/sites/default/files/field/image/peace_article.jpg"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- Login Modal -->
+<div
+  mdbModal
+  #login="mdbModal"
+  class="modal fade left"
+  id="frameModalTop"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Entrar</h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="login.hide()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+          <input
+            type="text"
+            [formControl]="loginUsername"
+            class="form-control"
+            mdbInput
+            mdbValidate
+          />
+          <label for="defaultForm-email">Usuário</label>
+          <mdb-error
+            *ngIf="
+              loginUsername.invalid &&
+              (loginUsername.dirty || loginUsername.touched)
+            "
+          >
+            Usuário inválido
+          </mdb-error>
+          <mdb-success
+            *ngIf="
+              loginUsername.valid &&
+              (loginUsername.dirty || loginUsername.touched)
+            "
+          >
+          </mdb-success>
+        </div>
+
+        <div class="md-form mb-4">
+          <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
+          <input
+            type="password"
+            id="defaultForm-pass"
+            [formControl]="loginPassword"
+            class="form-control"
+            mdbInput
+            mdbValidate
+          />
+          <label for="defaultForm-pass">Senha</label>
+          <mdb-error
+            *ngIf="
+              loginPassword.invalid &&
+              (loginPassword.dirty || loginPassword.touched)
+            "
+          >
+            Senha inválida
+          </mdb-error>
+          <mdb-success
+            *ngIf="
+              loginPassword.valid &&
+              (loginPassword.dirty || loginPassword.touched)
+            "
+          >
+          </mdb-success>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button
+          mdbBtn
+          color="default"
+          class="waves-light mr-5"
+          mdbWavesEffect
+          [disabled]="loginForm.invalid"
+          (click)="userLogin()"
+        >
+          Login
+        </button>
+
+        <button
+          mdbBtn
+          color="success"
+          class="waves-light"
+          mdbWavesEffect
+          (click)="login.hide(); signup.show()"
+        >
+          Crie uma conta
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sign up model -->
+<div
+  mdbModal
+  #signup="mdbModal"
+  class="modal fade left"
+  id="frameModalTop"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Crie sua conta</h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="signup.hide()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+          <input
+            type="text"
+            id="orangeForm-name"
+            class="form-control"
+            [formControl]="signupUsername"
+            mdbInput
+            mdbValidate
+          />
+          <label for="orangeForm-name">Usuário</label>
+          <mdb-error
+            *ngIf="
+              signupUsername.invalid &&
+              (signupUsername.dirty || signupUsername.touched)
+            "
+          >
+            Usuário inválido
+          </mdb-error>
+          <mdb-success
+            *ngIf="
+              signupUsername.valid &&
+              (signupUsername.dirty || signupUsername.touched)
+            "
+          >
+          </mdb-success>
+        </div>
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="unlock" class="prefix grey-text"></mdb-icon>
+          <input
+            type="password"
+            class="form-control"
+            [formControl]="signupPassword"
+            mdbInput
+            mdbValidate
+          />
+          <label for="orangeForm-email">Senha</label>
+          <mdb-error
+            *ngIf="
+              signupPassword.invalid &&
+              (signupPassword.dirty || signupPassword.touched)
+            "
+            >Senha inválida
+          </mdb-error>
+          <mdb-success
+            *ngIf="
+              signupPassword.valid &&
+              (signupPassword.dirty || signupPassword.touched)
+            "
+          >
+          </mdb-success>
+        </div>
+
+        <div class="md-form mb-4">
+          <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
+          <input
+            type="password"
+            id="orangeForm-pass"
+            class="form-control"
+            [formControl]="signupPasswordConf"
+            mdbInput
+            mdbValidate
+          />
+          <label for="orangeForm-pass">Confirme sua senha</label>
+          <mdb-error
+            *ngIf="
+              (signupPasswordConf.invalid &&
+                (signupPasswordConf.dirty || signupPasswordConf.touched)) ||
+              (signupPassword.value !== signupPasswordConf.value &&
+                (signupPasswordConf.dirty || signupPasswordConf.touched))
+            "
+          >
+            As senhas precisam ser iguais
+          </mdb-error>
+          <mdb-success
+            *ngIf="
+              (signupPasswordConf.dirty || signupPasswordConf.touched) &&
+              signupPassword.value === signupPasswordConf.value
+            "
+          >
+          </mdb-success>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button
+          mdbBtn
+          color="deep-orange"
+          class="waves-light"
+          mdbWavesEffect
+          [disabled]="
+            signupForm.invalid ||
+            signupPassword.value !== signupPasswordConf.value
+          "
+          (click)="userSignup()"
+        >
+          Criar conta
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+-->

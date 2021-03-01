@@ -1,0 +1,29 @@
+<app-navbar [username]="userInfo.username"></app-navbar>
+
+<main class="mt-5">
+  <div class="container">
+    <div class="col-12">
+      <div class="md-form">
+        <textarea
+          type="text"
+          id="feed-input"
+          class="md-textarea form-control"
+          mdbInput
+        ></textarea>
+        <label for="form7">Escreva algo!</label>
+        <mdb-icon fas icon="bold" (click)="putDecoration('b')"></mdb-icon>
+        <mdb-icon
+          fas
+          icon="italic"
+          class="ml-2"
+          (click)="putDecoration('i')"
+        ></mdb-icon>
+      </div>
+    </div>
+
+    <div class="col-12 feed poppins-font mt-5">
+      <h3 class="decoration-btn">Feed</h3>
+      <hr class="elegant-color-dark" />
+    </div>
+  </div>
+</main>

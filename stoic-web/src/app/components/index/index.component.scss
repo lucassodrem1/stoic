@@ -1,0 +1,90 @@
+p {
+  color: #666;
+}
+
+/* NAVBAR */
+nav {
+  padding: 0.8rem 6rem;
+  transition: all 0.5s;
+}
+
+.nav-item {
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.3s;
+  color: #444 !important;
+  margin-left: 2.2rem;
+  transition: all 0.3s;
+}
+
+.nav-item-text {
+  margin-top: 0.9rem;
+}
+
+.nav-btn {
+  border: none;
+  background-color: #5ec576;
+  border-radius: 3rem;
+  padding: 0.8rem 2rem !important;
+  color: #222 !important;
+  transition: all 0.3s;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.nav-btn:active {
+  border: none;
+}
+
+.nav-btn:hover {
+  color: white !important;
+  padding: 1rem 2rem;
+  border-radius: 0rem;
+}
+
+.scroll-bar {
+  background: white;
+}
+
+/* HEADER Title */
+
+.header-title {
+  color: #444;
+}
+
+.header-img {
+  margin-top: -9rem;
+}
+
+.header-btn {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #5ec576;
+  border: none;
+  background-color: inherit;
+}
+
+.header-btn-hr {
+  margin-top: -0.01rem;
+  border-color: currentColor;
+}
+
+/** SECTION **/
+.section-title {
+  color: #5ec576;
+  font-weight: 500;
+}
+
+.section-hr {
+  margin-top: -0.3rem;
+  border-color: #5ec576;
+}
+
+main {
+  margin-top: -13rem;
+}
+
+.login-modal {
+  display: none;
+}
